@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# sb_39-05-10-react-testing-exercise-carousel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Develop further tests for a React application that includes an image carousel component. The carousel component also contains bugs that require fixes.
 
-## Available Scripts
+**NOTES**: `@fortawesome` was missing and had to get installed via `npm install @fortawesome/fontawesome-free` (and yes, fort NOT font). By the way, [**N**uclear **P**owered **M**arshmallows](https://www.npmjs.com/package/@fortawesome/fontawesome-free) instead of **N**ode **P**ackage **M**anager is quite funny!
 
-In the project directory, you can run:
 
-### `npm start`
+## Technology Stack
+- **Front-end**: ReactJS
+- **Back-end**: n/a
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Assignment Details
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Part 1: Demo the App & Read the Code** involved reading and running the code to gain familiarity.
 
-### `npm test`
+**Part 2: Smoke and Snapshot tests** involved writing **smoke** and **snapshot** tests for the **_Card_** and **_Carousel_** components.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Part 3: Bug! Left arrow** involved writing event tests to ensure the left arrow works correctly. The left arrow was broken and the test will fail until the **Carousel** component was fixed.
 
-### `npm run build`
+**Part 4: Bug! Exhausting the image array** involved fixing the hard crashes that occurred because the left and right arrow buttons were still enabled when at the beginning or end, respectively, of the photo list.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Enhancements**
+- WHEN WILL I LEARN TO BE LEARY OF THE LAST PART OF THE ASSIGNMENT?? Ugh. These are always the ones where I get trapped or encounter things I hate and have an unexplainable compulsion to fix -- like a display shift as an element disappears and reappears -- even in an 'exercise'!! ANYWAY, the left and right buttons were fixed and the initial attempt had the left and right arrow buttons disappearing when there were no images to the left (beginning of images) or to the right (end of images). I did not like it because of the way the carousel shifted whenever the left button appeared or disapeared. The fix meant changing the arrow buttons to components and passing in values to enable and disable them. This also meant additional tests for the new `Arrows` component and changing tests that assumed the left or right button would is not on the page when at the beginning or end of images. The solution worked, but warnings were generated when the code ran because a "" was getting assigned as the onClick function -- it did not matter because the button was disabled, but I did not like the warning messages for the component. More logic was added only ensure a function, fx, was passed but it resulted in returning either the <i> component with an onClick or returning the <i> component without the onClick and with the `Arrows-disabled` class. I had no luck getting a ternary to work.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Difficulties**
+- I had no luck getting a ternary to work to use onClick=fx when fx is a function or use nothing when fx is not a function. This stumble meant that 2 versions of each arrow are possible -- one with a onClick because a function was passed and one without onClick. And this occurred for both left and right buttons as well, and I feel an unnecessary conplexity was introduced to fix something asthetic. I am pleased with the result, but I wonder whether a better, simpler approach is possible. I also thought about passing in 'left' and 'right' as props in addition to the disable class and function but felt that a distinct `ArrowForwards` and `ArrowBackwards` components were clearer.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

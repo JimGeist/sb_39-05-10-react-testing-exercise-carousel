@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disabled ArrowBackwards matches snapshot 1`] = `
+<DocumentFragment>
+  <i
+    class="fas fa-chevron-circle-left fa-2x Arrows-disabled"
+    data-testid="left-arrow"
+  />
+</DocumentFragment>
+`;
+
+exports[`Disabled ArrowForwards matches snapshot 1`] = `
+<DocumentFragment>
+  <i
+    class="fas fa-chevron-circle-right fa-2x Arrows-disabled"
+    data-testid="right-arrow"
+  />
+</DocumentFragment>
+`;
+
+exports[`Enabled ArrowBackwards with onClick fx matches snapshot 1`] = `
+<DocumentFragment>
+  <i
+    class="fas fa-chevron-circle-left fa-2x"
+    data-testid="left-arrow"
+  />
+</DocumentFragment>
+`;
+
+exports[`Enabled ArrowForwards with onClick fx matches snapshot 1`] = `
+<DocumentFragment>
+  <i
+    class="fas fa-chevron-circle-right fa-2x"
+    data-testid="right-arrow"
+  />
+</DocumentFragment>
+`;
