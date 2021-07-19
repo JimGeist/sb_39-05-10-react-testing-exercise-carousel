@@ -2,7 +2,7 @@
 
 Develop further tests for a React application that includes an image carousel component. The carousel component also contains bugs that require fixes.
 
-**NOTES**: `@fortawesome` was missing and had to get installed via `npm install @fortawesome/fontawesome-free` (and yes, fort NOT font). By the way, [**N**uclear **P**owered **M**arshmallows](https://www.npmjs.com/package/@fortawesome/fontawesome-free) instead of **N**ode **P**ackage **M**anager is quite funny!
+**NOTES**: `@fortawesome` was missing and had to get installed via `npm install @fortawesome/fontawesome-free` (and yes, fort NOT font). By the way, [**N**uclear **P**owered **M**arshmallows](https://www.npmjs.com/package/@fortawesome/fontawesome-free) instead of **N**ode **P**ackage **M**anager is quite funny! The spelled out version of **NPM** changes each time you visit the page!
 
 
 ## Technology Stack
